@@ -65,6 +65,21 @@ app.get("/data",(req,res)=>{
 })
 
 
+app.get("/wapi",(req,res)=>{
+   let data={
+    banglore:"25C",
+    delhi:"14C",
+    pune:"28C"
+   }
+
+   const{city}=req.query
+   res.send(`the temprecher at ${city} is ${data[city]}`)
+})
+
+app.get("/man/:number",(req,res)=>{
+    const number=req.params.number
+    res.send(`man cloths number  ${number}`)
+})
 
 
 // server start--->
